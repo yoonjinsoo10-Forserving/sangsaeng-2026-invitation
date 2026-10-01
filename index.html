@@ -135,6 +135,18 @@ section { padding: 44px 20px; }
 .stats b { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--purple); display: block; line-height: 1.3; }
 .stats span { font-size: 13px; color: var(--muted); }
 
+/* 후원사 */
+.sp-lead { text-align: center; color: var(--muted); font-size: 14.5px; margin-top: 10px; word-break: keep-all; }
+.sponsors { list-style: none; padding: 0; margin: 20px 0 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.sponsors li { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: 66px; padding: 12px 14px 12px 20px; background: var(--surface); border-radius: 14px; box-shadow: var(--shadow); font-size: 13px; color: var(--muted); line-height: 1.4; word-break: keep-all; }
+.sponsors li span { font-size: 16px; font-weight: 700; color: var(--ink); }
+.sponsors li::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 5px; border-radius: 0 5px 5px 0; background: var(--navy); }
+.sponsors li:nth-child(5n+2)::before { background: var(--purple); }
+.sponsors li:nth-child(5n+3)::before { background: var(--green); }
+.sponsors li:nth-child(5n+4)::before { background: var(--orange); }
+.sponsors li:nth-child(5n+5)::before { background: var(--pink); }
+.sponsors li:last-child:nth-child(odd) { grid-column: 1 / -1; align-items: center; text-align: center; }
+
 /* 오시는 길 */
 .place { text-align: center; margin-top: 18px; }
 .place b { font-size: 20px; }
@@ -300,6 +312,21 @@ section { padding: 44px 20px; }
       <span>수석부회장 <b>김경희</b></span>
       <span>TF 담당 부회장 <b>이한홍</b></span>
     </div>
+  </section>
+
+  <section class="rv" aria-labelledby="spH">
+    <p class="eyebrow">Sponsors</p>
+    <h2 class="h2" id="spH">함께해 주시는 후원사</h2>
+    <p class="sp-lead">소상공인의 상생을 응원해 주신<br>든든한 후원 기관에 깊이 감사드립니다.</p>
+    <ul class="sponsors">
+      <li><span>한국마사회</span>일산지사</li>
+      <li><span>롯데칠성음료</span>고양지점</li>
+      <li><span>삼성전자</span>일산지점</li>
+      <li><span>농협</span>고양유통센터</li>
+      <li><span>고양축산농협</span></li>
+      <li><span>송포농업협동조합</span></li>
+      <li><span>하나은행</span></li>
+    </ul>
   </section>
 
   <section class="host rv">
