@@ -183,6 +183,7 @@ section { padding: 44px 20px; }
 .qr svg, .qr img { width: 100%; height: 100%; display: block; }
 .url { margin: 14px 0 0; font-size: 13px; color: var(--muted); word-break: break-all; user-select: all; }
 .card .btn { margin-top: 14px; width: 100%; }
+.card .ghost { margin-top: 10px; width: 100%; }
 .toast { min-height: 20px; margin-top: 8px; font-size: 13px; color: var(--green); font-weight: 700; }
 .hint2 { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
 
@@ -308,6 +309,7 @@ section { padding: 44px 20px; }
     <div class="qr" id="qr" aria-label="초대장 링크 QR 코드"></div>
     <p class="url" id="urlText"></p>
     <button class="btn" id="copyBtn2" type="button">링크 복사</button>
+    <button class="ghost" id="nativeShare" type="button" hidden>카카오톡·문자 등으로 공유</button>
     <p class="toast" id="toast" role="status"></p>
     <p class="hint2">복사한 링크를 카카오톡 대화방에 붙여넣어 보내세요.</p>
   </div>
@@ -394,6 +396,14 @@ section { padding: 44px 20px; }
   }
   $("copyBtn").addEventListener("click", function () { copy("toast2"); });
   $("copyBtn2").addEventListener("click", function () { copy("toast"); });
+
+  /* 휴대폰 기본 공유창(카카오톡·문자·네이버 등 설치된 앱). 지원하지 않는 기기에서는 버튼을 숨김 */
+  if (navigator.share) {
+    $("nativeShare").hidden = false;
+    $("nativeShare").addEventListener("click", function () {
+      navigator.share({ title: document.title, text: "2026 고양특례시 소상공인 상생한마당에 초대합니다", url: url }).catch(function () {});
+    });
+  }
 
   /* 스크롤 등장: 화면 아래 섹션만 숨겼다가 나타냄 */
   if ("IntersectionObserver" in window) {
