@@ -82,16 +82,22 @@ section { padding: 44px 20px; }
 .intro .name { font-family: var(--font-display); font-size: 30px; line-height: 1.3; color: var(--navy); text-wrap: balance; }
 .intro .name b { color: var(--purple); font-weight: 400; }
 .slogan { font-family: var(--font-hand); font-size: 30px; color: var(--purple); margin-top: 6px; line-height: 1.3; }
-.facts { display: grid; gap: 10px; margin-top: 26px; text-align: left; }
-.fact { display: grid; grid-template-columns: 74px 1fr; align-items: center; gap: 12px; background: var(--surface); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); }
-.fact dt { font-size: 13px; font-weight: 700; text-align: center; padding: 6px 0; border-radius: 8px; color: #fff; }
-.fact:nth-child(1) dt { background: var(--navy); }
-.fact:nth-child(2) dt { background: var(--yellow); color: #14204a; }
-.fact:nth-child(3) dt { background: var(--green); }
-.fact dd { margin: 0; font-size: 15.5px; font-weight: 500; min-width: 0; }
-.fact dd small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
+.facts { display: grid; gap: 12px; margin-top: 26px; text-align: left; }
+.fact { position: relative; overflow: hidden; display: grid; grid-template-columns: 64px 1fr; align-items: center; gap: 16px; background: var(--surface); border-radius: 18px; padding: 16px 16px 16px 20px; box-shadow: var(--shadow); animation: rise .8s cubic-bezier(.22, .8, .24, 1) both; animation-delay: calc(var(--i, 0) * .12s + .25s); }
+.fact::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--c); }
+.fact dt { font-size: 14px; font-weight: 800; text-align: center; padding: 8px 0; border-radius: 12px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); letter-spacing: .08em; }
+.fact:nth-child(1) { --c: var(--navy); }
+.fact:nth-child(2) { --c: #e0a800; }
+.fact:nth-child(3) { --c: var(--green); }
+.fact dd { margin: 0; font-size: 16px; font-weight: 500; min-width: 0; padding-left: 16px; border-left: 1px solid var(--line); }
+.fact dd small { display: block; margin-top: 2px; color: var(--muted); font-size: 13.5px; font-weight: 400; }
 .date-hi { font-variant-numeric: tabular-nums; }
-.date-hi em { font-style: normal; color: var(--navy); font-weight: 700; }
+.date-hi em { font-style: normal; font-size: 17px; font-weight: 800; background: linear-gradient(90deg, var(--navy), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.fact dd b { font-weight: 800; font-size: 17px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips span { font-size: 13.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: color-mix(in srgb, var(--green) 13%, transparent); color: var(--ink); word-break: keep-all; }
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fact { animation: none; } }
 
 /* 모시는 글 */
 .letter { text-align: center; }
@@ -189,14 +195,17 @@ section { padding: 44px 20px; }
 .hint { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; }
 
 /* 참석 */
-.rsvp { text-align: center; background: var(--navy); color: var(--on-navy); border-radius: 22px; margin-inline: 16px; padding: 34px 20px; }
-:root[data-theme="dark"] .rsvp { color: #0d1430; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rsvp { color: #0d1430; } }
-.rsvp h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; }
-.rsvp p { margin-top: 8px; font-size: 15px; opacity: .92; }
-.rsvp .contacts { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 36px; margin-top: 20px; font-size: 18px; color: var(--yellow); opacity: 1; }
-.rsvp .contacts b { font-weight: 700; font-size: 20px; }
+.rsvp { position: relative; overflow: hidden; text-align: center; color: #fff; background: linear-gradient(145deg, #1e3f8f 0%, #3b3a9e 58%, #5b2a91 100%); border-radius: 26px; margin-inline: 16px; padding: 40px 20px 30px; box-shadow: 0 14px 32px rgba(46, 48, 130, .28); }
+.rsvp::before { content: ""; position: absolute; width: 240px; height: 240px; right: -80px; top: -110px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, .2), rgba(255, 255, 255, 0) 70%); pointer-events: none; }
+.rsvp::after { content: "RSVP"; display: block; position: absolute; top: 16px; left: 0; right: 0; font-size: 11px; font-weight: 800; letter-spacing: .4em; padding-left: .4em; color: var(--yellow); }
+.rsvp h2 { position: relative; font-family: var(--font-display); font-weight: 400; font-size: 26px; }
+.rsvp p { margin-top: 8px; font-size: 15px; opacity: .92; word-break: keep-all; }
+.rsvp .contacts { display: flex; justify-content: center; align-items: stretch; margin-top: 22px; padding-top: 20px; border-top: 1px dashed rgba(255, 255, 255, .28); color: var(--yellow); }
+.rsvp .contacts span { display: flex; flex-direction: column; flex: 1 1 0; gap: 2px; padding: 0 10px; font-size: 13px; color: rgba(255, 255, 255, .78); word-break: keep-all; }
+.rsvp .contacts span + span { border-left: 1px solid rgba(255, 255, 255, .24); }
+.rsvp .contacts b { font-weight: 800; font-size: 22px; color: var(--yellow); line-height: 1.3; }
 .btn { display: inline-block; margin-top: 20px; background: var(--yellow); color: #14204a; font-weight: 700; font-size: 17px; padding: 14px 30px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+.rsvp .tel { display: inline-block; margin-top: 18px; padding: 9px 22px; border-radius: 999px; background: rgba(255, 255, 255, .13); border: 1px solid rgba(255, 255, 255, .28); opacity: 1; }
 .tel { margin-top: 14px; font-size: 15px; font-variant-numeric: tabular-nums; }
 .tel b { font-size: 19px; user-select: all; }
 
@@ -258,9 +267,9 @@ section { padding: 44px 20px; }
     <h1 class="name">2026년 고양특례시 소상공인 <b>상생한마당</b></h1>
     <p class="slogan">소상공인이 웃어야 대한민국이 웃는다!</p>
     <dl class="facts">
-      <div class="fact"><dt>일 시</dt><dd class="date-hi"><em>2026. 10. 24.(토) ~ 10. 25.(일)</em><small>매일 09:00 ~ 20:00</small></dd></div>
-      <div class="fact"><dt>장 소</dt><dd>일산문화광장<small>개막식 10월 24일(토) 오후 2시</small></dd></div>
-      <div class="fact"><dt>내 용</dt><dd>기념식과 개막식, 우수상품 체험부스, 축하공연과 가요제, 가치소비 경품행사</dd></div>
+      <div class="fact" style="--i:0"><dt>일 시</dt><dd class="date-hi"><em>2026. 10. 24.(토) ~ 10. 25.(일)</em><small>매일 09:00 ~ 20:00</small></dd></div>
+      <div class="fact" style="--i:1"><dt>장 소</dt><dd><b>일산문화광장</b><small>개막식 10월 24일(토) 오후 2시</small></dd></div>
+      <div class="fact" style="--i:2"><dt>내 용</dt><dd class="chips"><span>기념식과 개막식</span><span>우수상품 체험부스</span><span>축하공연과 가요제</span><span>가치소비 경품행사</span></dd></div>
     </dl>
   </section>
 
