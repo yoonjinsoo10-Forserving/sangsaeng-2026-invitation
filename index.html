@@ -94,8 +94,9 @@ section { padding: 44px 20px; }
 .date-hi { font-variant-numeric: tabular-nums; }
 .date-hi em { font-style: normal; font-size: 17px; font-weight: 800; background: linear-gradient(90deg, var(--navy), var(--purple)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 .fact dd b { font-weight: 800; font-size: 17px; }
-.chips { display: flex; flex-wrap: wrap; gap: 6px; }
-.chips span { font-size: 13.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px; background: color-mix(in srgb, var(--green) 13%, transparent); color: var(--ink); word-break: keep-all; }
+.lines { display: grid; gap: 7px; }
+.lines span { display: flex; align-items: center; gap: 10px; font-size: 15.5px; font-weight: 600; line-height: 1.4; word-break: keep-all; }
+.lines span::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--d); box-shadow: 0 0 0 4px color-mix(in srgb, var(--d) 18%, transparent); }
 @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
 @media (prefers-reduced-motion: reduce) { .fact { animation: none; } }
 
@@ -270,7 +271,7 @@ section { padding: 44px 20px; }
     <dl class="facts">
       <div class="fact" style="--i:0"><dt>일 시</dt><dd class="date-hi"><em>2026. 10. 24.(토) ~ 10. 25.(일)</em><small>매일 09:00 ~ 20:00</small></dd></div>
       <div class="fact" style="--i:1"><dt>장 소</dt><dd><b>일산문화광장</b><small>개막식 10월 24일(토) 오후 2시</small></dd></div>
-      <div class="fact" style="--i:2"><dt>내 용</dt><dd class="chips"><span>기념식과 개막식</span><span>우수상품 체험부스</span><span>축하공연과 가요제</span><span>가치소비 경품행사</span></dd></div>
+      <div class="fact" style="--i:2"><dt>내 용</dt><dd class="lines"><span style="--d:var(--orange)">기념식과 개막식</span><span style="--d:var(--green)">우수상품 체험부스</span><span style="--d:var(--navy)">축하공연과 가요제</span><span style="--d:var(--pink)">가치소비 경품행사</span></dd></div>
     </dl>
   </section>
 
