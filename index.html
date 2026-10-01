@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>2026 고양특례시 소상공인 상생한마당</title>
+<meta name="description" content="10월 24일(토)~25일(일) 09:00~20:00 · 일산문화광장 · 소상공인이 웃어야 대한민국이 웃는다!">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="고양특례시소상공인연합회">
+<meta property="og:title" content="2026 고양특례시 소상공인 상생한마당 초대합니다">
+<meta property="og:description" content="10월 24일(토)~25일(일) 09:00~20:00 · 일산문화광장 · 소상공인이 웃어야 대한민국이 웃는다!">
+<meta property="og:image" content="https://sangsaeng2026.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
+<meta property="og:url" content="https://sangsaeng2026.pages.dev/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="logo.png">
+<style>:root{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+/* Layout: 모바일 세로 스크롤 초대장. 포스터 표지 → 일시·모시는 글 → 달력·D-day → 프로그램 → 오시는 길 → 참석 신청 → 공유. 좌상단 고정 ⋯ 버튼이 공유 창을 연다. */
+:root {
+  --bg: #f2f5fb;
+  --surface: #ffffff;
+  --ink: #14204a;
+  --muted: #56607e;
+  --line: #dfe4f1;
+  --navy: #1e3f8f;
+  --purple: #5b2d8e;
+  --green: #1f9d4b;
+  --orange: #f08a1c;
+  --pink: #e6167f;
+  --yellow: #ffe600;
+  --red: #e30613;
+  --on-navy: #ffffff;
+  --shadow: 0 6px 22px rgba(30, 63, 143, .10);
+  --font-display: "Black Han Sans", "Noto Sans KR", sans-serif;
+  --font-body: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-hand: "Nanum Brush Script", "Noto Sans KR", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1430; --surface: #172046; --ink: #eef1fb; --muted: #a9b2d4; --line: #2a356a;
+    --navy: #7f9cf0; --purple: #b790ec; --green: #47c778; --orange: #f5a54a; --pink: #f2559f;
+    --shadow: 0 6px 22px rgba(0, 0, 0, .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1430; --surface: #172046; --ink: #eef1fb; --muted: #a9b2d4; --line: #2a356a;
+  --navy: #7f9cf0; --purple: #b790ec; --green: #47c778; --orange: #f5a54a; --pink: #f2559f;
+  --shadow: 0 6px 22px rgba(0, 0, 0, .35);
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); line-height: 1.7; -webkit-text-size-adjust: 100%; }
+* { box-sizing: border-box; }
+.wrap { max-width: 520px; margin-inline: auto; overflow-x: clip; }
+a { color: inherit; }
+h1, h2, h3, p { margin: 0; }
+:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; border-radius: 6px; }
+
+/* 고정 공유 버튼 */
+.menu-btn {
+  position: fixed; z-index: 30; left: 14px; top: calc(env(safe-area-inset-top, 0px) + 14px);
+  width: 46px; height: 46px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--purple); color: #fff; display: grid; place-items: center;
+  box-shadow: 0 4px 14px rgba(0,0,0,.28);
+}
+.menu-btn svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* 표지 */
+.cover { position: relative; }
+.cover img { display: block; width: 100%; height: auto; }
+.cover .wave { position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 26px; display: block; fill: var(--bg); }
+
+section { padding: 44px 20px; }
+.eyebrow { font-size: 12px; font-weight: 700; letter-spacing: .14em; color: var(--purple); text-transform: uppercase; text-align: center; }
+.h2 { font-family: var(--font-display); font-size: 26px; text-align: center; margin-top: 4px; color: var(--navy); text-wrap: balance; line-height: 1.35; }
+
+/* 일시 */
+.intro { text-align: center; padding-top: 28px; }
+.intro .name { font-family: var(--font-display); font-size: 30px; line-height: 1.3; color: var(--navy); text-wrap: balance; }
+.intro .name b { color: var(--purple); font-weight: 400; }
+.slogan { font-family: var(--font-hand); font-size: 30px; color: var(--purple); margin-top: 6px; line-height: 1.3; }
+.facts { display: grid; gap: 10px; margin-top: 26px; text-align: left; }
+.fact { display: grid; grid-template-columns: 74px 1fr; align-items: center; gap: 12px; background: var(--surface); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); }
+.fact dt { font-size: 13px; font-weight: 700; text-align: center; padding: 6px 0; border-radius: 8px; color: #fff; }
+.fact:nth-child(1) dt { background: var(--navy); }
+.fact:nth-child(2) dt { background: var(--yellow); color: #14204a; }
+.fact:nth-child(3) dt { background: var(--green); }
+.fact dd { margin: 0; font-size: 15.5px; font-weight: 500; min-width: 0; }
+.fact dd small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; }
+.date-hi { font-variant-numeric: tabular-nums; }
+.date-hi em { font-style: normal; color: var(--navy); font-weight: 700; }
+
+/* 모시는 글 */
+.letter { text-align: center; }
+.letter .body { margin-top: 22px; display: grid; gap: 22px; font-size: 16px; color: var(--ink); text-wrap: pretty; word-break: keep-all; }
+.letter .body strong { color: var(--purple); }
+.sign { margin-top: 30px; display: grid; gap: 2px; justify-items: center; }
+.sign span { color: var(--muted); font-size: 14px; }
+.sign b { font-size: 18px; letter-spacing: .06em; }
+
+/* 달력 */
+.cal { max-width: 360px; margin: 24px auto 0; background: var(--surface); border-radius: 18px; padding: 18px 14px 16px; box-shadow: var(--shadow); }
+.cal-head { text-align: center; font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 4px; text-align: center; font-variant-numeric: tabular-nums; }
+.cal-grid .dow { font-size: 12px; color: var(--muted); padding-bottom: 4px; }
+.cal-grid .dow:first-child { color: var(--red); }
+.cal-grid .d { height: 38px; display: grid; place-items: center; font-size: 15px; position: relative; }
+.cal-grid .d.sun { color: var(--red); }
+.cal-grid .d.on span { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--purple); color: #fff; font-weight: 700; }
+.cal-note { text-align: center; font-size: 13px; color: var(--muted); margin-top: 8px; }
+.count { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; max-width: 360px; margin: 16px auto 0; }
+.count div { background: var(--surface); border-radius: 14px; padding: 12px 4px 10px; text-align: center; box-shadow: var(--shadow); }
+.count b { display: block; font-family: var(--font-display); font-size: 28px; font-weight: 400; line-height: 1.2; font-variant-numeric: tabular-nums; color: var(--navy); }
+.count span { font-size: 11px; letter-spacing: .12em; color: var(--muted); }
+.count-title { text-align: center; margin-top: 22px; font-size: 14px; color: var(--muted); }
+.count-msg { text-align: center; font-weight: 700; color: var(--purple); margin-top: 16px; }
+
+/* 프로그램 */
+.prog { display: grid; gap: 12px; margin-top: 24px; }
+.prog li { list-style: none; display: grid; grid-template-columns: 14px 1fr; gap: 12px; background: var(--surface); border-radius: 14px; padding: 14px 16px; box-shadow: var(--shadow); align-items: start; }
+.prog { padding: 0; }
+.prog i { width: 14px; height: 14px; border-radius: 50%; margin-top: 7px; display: block; }
+.prog b { display: block; font-size: 16px; }
+.prog small { color: var(--muted); font-size: 13.5px; }
+.stage { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; align-items: center; }
+.stage .chip { border-radius: 999px; padding: 8px 18px; font-weight: 700; color: #fff; font-size: 15px; }
+.stage .chip:nth-child(2) { background: var(--purple); }
+.stage .chip:nth-child(3) { background: var(--navy); }
+.stage .lbl { font-size: 13px; color: var(--muted); width: 100%; text-align: center; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; }
+.stats div { background: var(--surface); border-radius: 14px; padding: 12px 14px; box-shadow: var(--shadow); }
+.stats b { font-family: var(--font-display); font-weight: 400; font-size: 26px; color: var(--purple); display: block; line-height: 1.3; }
+.stats span { font-size: 13px; color: var(--muted); }
+
+/* 오시는 길 */
+.place { text-align: center; margin-top: 18px; }
+.place b { font-size: 20px; }
+.place span { display: block; color: var(--muted); font-size: 14px; margin-top: 2px; }
+.maps { display: grid; grid-template-columns: repeat(3, 1fr); background: var(--surface); border-radius: 14px; box-shadow: var(--shadow); margin-top: 18px; overflow: hidden; }
+.maps a { text-align: center; padding: 16px 4px; font-weight: 700; font-size: 14px; text-decoration: none; }
+.maps a + a { border-left: 1px solid var(--line); }
+.maps a:active { background: var(--line); }
+.mapimg { display: block; margin-top: 18px; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow); background: #fff; }
+.mapimg img { display: block; width: 100%; height: auto; }
+.hint { text-align: center; font-size: 13px; color: var(--muted); margin-top: 10px; }
+
+/* 참석 */
+.rsvp { text-align: center; background: var(--navy); color: var(--on-navy); border-radius: 22px; margin-inline: 16px; padding: 34px 20px; }
+:root[data-theme="dark"] .rsvp { color: #0d1430; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .rsvp { color: #0d1430; } }
+.rsvp h2 { font-family: var(--font-display); font-weight: 400; font-size: 26px; }
+.rsvp p { margin-top: 8px; font-size: 15px; opacity: .92; }
+.btn { display: inline-block; margin-top: 20px; background: var(--yellow); color: #14204a; font-weight: 700; font-size: 17px; padding: 14px 30px; border-radius: 999px; text-decoration: none; border: 0; cursor: pointer; font-family: inherit; }
+.tel { margin-top: 14px; font-size: 15px; font-variant-numeric: tabular-nums; }
+.tel b { font-size: 19px; user-select: all; }
+
+/* 주최 */
+.host { text-align: center; padding-bottom: 30px; }
+.logo { width: 220px; max-width: 70%; height: auto; display: block; margin: 0 auto; }
+:root[data-theme="dark"] .logo { background: #fff; padding: 10px 14px; border-radius: 12px; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .logo { background: #fff; padding: 10px 14px; border-radius: 12px; } }
+.host dl { margin: 22px 0 0; display: grid; gap: 8px; justify-content: center; font-size: 14px; }
+.host dl div { display: flex; gap: 10px; align-items: center; justify-content: center; flex-wrap: wrap; }
+.host dt { background: var(--navy); color: var(--on-navy); border-radius: 999px; padding: 1px 12px; font-size: 12px; font-weight: 700; }
+:root[data-theme="dark"] .host dt { color: #0d1430; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .host dt { color: #0d1430; } }
+.host dd { margin: 0; font-weight: 500; }
+.addr { margin-top: 18px; color: var(--muted); font-size: 13.5px; line-height: 1.8; }
+.share-row { display: flex; gap: 10px; justify-content: center; margin-top: 26px; flex-wrap: wrap; }
+.ghost { background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-radius: 999px; padding: 11px 20px; font-weight: 700; font-size: 15px; cursor: pointer; font-family: inherit; box-shadow: var(--shadow); }
+.copyright { margin-top: 24px; font-size: 12px; color: var(--muted); }
+
+/* 공유 창 */
+.sheet { position: fixed; inset: 0; z-index: 40; background: rgba(8, 14, 40, .55); display: grid; place-items: center; padding: 16px; }
+.sheet[hidden] { display: none !important; }
+.card { width: 100%; max-width: 380px; background: var(--surface); color: var(--ink); border-radius: 20px; padding: 22px 20px 20px; position: relative; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.4); }
+.card h3 { font-size: 18px; margin-bottom: 14px; }
+.x { position: absolute; right: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 20px; cursor: pointer; line-height: 1; }
+.qr { width: 190px; height: 190px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 8px; display: grid; place-items: center; }
+.qr svg { width: 100%; height: 100%; display: block; }
+.url { margin: 14px 0 0; font-size: 13px; color: var(--muted); word-break: break-all; user-select: all; }
+.card .btn { margin-top: 14px; width: 100%; }
+.toast { min-height: 20px; margin-top: 8px; font-size: 13px; color: var(--green); font-weight: 700; }
+.hint2 { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+/* 스크롤 등장 */
+.rv.pre { opacity: 0; transform: translateY(18px); }
+.rv { transition: opacity .6s ease, transform .6s ease; }
+@media (prefers-reduced-motion: reduce) { .rv, .rv.pre { transition: none; transform: none; opacity: 1; } }
+@media (max-width: 380px) { .intro .name { font-size: 26px; } .count b { font-size: 24px; } }
+</style>
+</head>
+<body>
+
+
+<button class="menu-btn" id="menuBtn" type="button" aria-label="공유하기 열기" aria-haspopup="dialog">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg>
+</button>
+
+<div class="wrap">
+
+  <header class="cover">
+    <img src="poster.jpg" alt="2026년 고양특례시 소상공인 상생한마당 포스터. 소상공인이 웃어야 대한민국이 웃는다. 가수 김소연, 황민호 출연. 2026년 10월 24일 토요일부터 25일 일요일, 일산문화광장." width="900" height="1272">
+    <svg class="wave" viewBox="0 0 400 26" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26V14C25 4 50 4 75 14s50 10 75 0 50-10 75 0 50 10 75 0 50-10 75 0 25 5 25 5V26z"/></svg>
+  </header>
+
+  <section class="intro rv">
+    <p class="eyebrow">소상공인의 날 기념식 및 개막식</p>
+    <h1 class="name">2026년 고양특례시 소상공인 <b>상생한마당</b></h1>
+    <p class="slogan">소상공인이 웃어야 대한민국이 웃는다!</p>
+    <dl class="facts">
+      <div class="fact"><dt>일 시</dt><dd class="date-hi"><em>2026. 10. 24.(토) ~ 10. 25.(일)</em><small>매일 09:00 ~ 20:00</small></dd></div>
+      <div class="fact"><dt>장 소</dt><dd>일산문화광장<small>개막식 10월 24일(토) 오후 2시</small></dd></div>
+      <div class="fact"><dt>내 용</dt><dd>기념식과 개막식, 우수상품 체험부스, 축하공연과 가요제, 가치소비 경품행사</dd></div>
+    </dl>
+  </section>
+
+  <section class="letter rv" aria-labelledby="letterH">
+    <p class="eyebrow">Invitation</p>
+    <h2 class="h2" id="letterH">모시는 글</h2>
+    <div class="body">
+      <p>소상공인의 소중한 가치와 노고를 함께 되새기고,<br>지역 소상공인과 시민이 함께 소통하며<br>상생의 의미를 나누는<br><strong>「소상공인의 날 기념식 및 상생한마당」</strong>에<br>여러분을 초대합니다.</p>
+      <p>지역경제의 든든한 버팀목인<br>소상공인 여러분께 감사의 마음을 전하고,<br>함께 웃고 즐기며 새로운 상생의 장을<br>만들어가는 뜻깊은 자리에<br>많은 관심과 참여 부탁드립니다.</p>
+    </div>
+    <div class="sign"><span>법정경제단체 고양특례시소상공인연합회</span><b>회장 김 용 락</b></div>
+  </section>
+
+  <section class="rv" aria-labelledby="calH">
+    <p class="eyebrow">Save the date</p>
+    <h2 class="h2" id="calH">2026년 10월</h2>
+    <div class="cal">
+      <div class="cal-grid" id="calGrid" role="grid" aria-label="2026년 10월 달력"></div>
+      <p class="cal-note">보라색 표시가 상생한마당 이틀입니다</p>
+    </div>
+    <p class="count-title" id="countTitle">개막식까지 남은 시간</p>
+    <div class="count" id="count" role="timer" aria-live="off">
+      <div><b id="cd">0</b><span>DAYS</span></div>
+      <div><b id="ch">0</b><span>HOURS</span></div>
+      <div><b id="cm">0</b><span>MINUTES</span></div>
+      <div><b id="cs">0</b><span>SECONDS</span></div>
+    </div>
+    <p class="count-msg" id="countMsg" hidden></p>
+  </section>
+
+  <section class="rv" aria-labelledby="progH">
+    <p class="eyebrow">Program</p>
+    <h2 class="h2" id="progH">행사 안내</h2>
+    <ul class="prog">
+      <li><i style="background:var(--orange)"></i><div><b>소상공인의 날 기념식 및 개막식</b><small>10월 24일(토) 오후 2시, 일산문화광장</small></div></li>
+      <li><i style="background:var(--green)"></i><div><b>소상공인 우수상품 홍보 및 체험부스 운영</b><small>이틀간 09:00 ~ 20:00</small></div></li>
+      <li><i style="background:var(--navy)"></i><div><b>축하공연 및 소상공인 가요제</b><small>무대 LED 전광판 운영</small></div></li>
+      <li><i style="background:var(--pink)"></i><div><b>가치소비 경품행사 및 시상식</b><small>이틀간 현장 진행</small></div></li>
+    </ul>
+    <div class="stage">
+      <span class="lbl">축하 무대 출연</span>
+      <span class="chip" style="background:var(--purple)">가수 김소연</span>
+      <span class="chip" style="background:var(--navy)">가수 황민호</span>
+    </div>
+    <div class="stats">
+      <div><b>100</b><span>참여 소상공인 업체</span></div>
+      <div><b>400″</b><span>무대 LED 전광판</span></div>
+    </div>
+  </section>
+
+  <section class="rv" aria-labelledby="mapH">
+    <p class="eyebrow">Location</p>
+    <h2 class="h2" id="mapH">오시는 길</h2>
+    <p class="place"><b>일산문화광장</b><span>경기도 고양시 일산동구 중앙로 1271-4</span><span>정발산역 3번 출구에서 도보 약 5분</span></p>
+    <a class="mapimg" href="https://map.naver.com/p/search/%EC%9D%BC%EC%82%B0%EB%AC%B8%ED%99%94%EA%B4%91%EC%9E%A5" target="_blank" rel="noopener"><img src="map.png" alt="찾아오시는 길 약도. 일산호수공원 옆 일산문화광장, 정발산역 3번 출구에서 도보 약 5분" width="382" height="202"></a>
+    <nav class="maps" aria-label="길찾기">
+      <a href="https://map.naver.com/p/search/%EC%9D%BC%EC%82%B0%EB%AC%B8%ED%99%94%EA%B4%91%EC%9E%A5" target="_blank" rel="noopener">네이버지도</a>
+      <a href="https://map.kakao.com/?q=%EC%9D%BC%EC%82%B0%EB%AC%B8%ED%99%94%EA%B4%91%EC%9E%A5" target="_blank" rel="noopener">카카오맵</a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=%EC%9D%BC%EC%82%B0%EB%AC%B8%ED%99%94%EA%B4%91%EC%9E%A5" target="_blank" rel="noopener">구글지도</a>
+    </nav>
+    <p class="hint">약도나 아래 버튼을 누르면 지도 앱에서 일산문화광장을 검색합니다.</p>
+  </section>
+
+  <section class="rsvp rv" aria-labelledby="rsvpH">
+    <h2 id="rsvpH">참석 여부를 알려주세요</h2>
+    <p>행사 준비에 큰 도움이 됩니다.<br>함께해 주시는 분들의 참석 여부를 알려주세요.</p>
+    <div id="rsvpAction"></div>
+    <p class="tel">문의 <b>031-906-6660</b></p>
+  </section>
+
+  <section class="host rv">
+    <img class="logo" src="logo.png" alt="KFME 고양특례시소상공인연합회" width="640" height="217">
+    <dl>
+      <div><dt>주최 · 주관</dt><dd>고양특례시소상공인연합회</dd></div>
+      <div><dt>후원</dt><dd>고양특례시</dd></div>
+    </dl>
+    <p class="addr">고양시 일산동구 중앙로 1160 오원프라자 803호<br>사무실 031-906-6660</p>
+    <div class="share-row">
+      <button class="ghost" type="button" id="shareOpen">공유하기</button>
+      <button class="ghost" type="button" id="copyBtn">링크 복사하기</button>
+    </div>
+    <p class="toast" id="toast2" role="status"></p>
+    <p class="copyright">© 고양특례시소상공인연합회</p>
+  </section>
+</div>
+
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetT">
+  <div class="card">
+    <button class="x" id="sheetX" type="button" aria-label="닫기">×</button>
+    <h3 id="sheetT">공유하기</h3>
+    <div class="qr" id="qr" aria-label="초대장 링크 QR 코드"></div>
+    <p class="url" id="urlText"></p>
+    <button class="btn" id="copyBtn2" type="button">링크 복사</button>
+    <p class="toast" id="toast" role="status"></p>
+    <p class="hint2">복사한 링크를 카카오톡 대화방에 붙여넣어 보내세요.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var PAGE_URL = "https://sangsaeng2026.pages.dev/";      // 게시 후 채움. 비어 있으면 현재 주소 사용
+  var RSVP_URL = "";      // 참석 신청 폼 주소. 비어 있으면 전화 안내만 표시
+  var url = PAGE_URL && PAGE_URL.indexOf("@@") < 0 ? PAGE_URL : location.href;
+  var rsvp = RSVP_URL && RSVP_URL.indexOf("@@") < 0 ? RSVP_URL : "";
+  var $ = function (id) { return document.getElementById(id); };
+
+  /* 달력: 2026년 10월 (1일은 목요일) */
+  var g = $("calGrid"), html = "";
+  ["일","월","화","수","목","금","토"].forEach(function (d) { html += '<div class="dow">' + d + "</div>"; });
+  var first = new Date(2026, 9, 1).getDay();
+  for (var i = 0; i < first; i++) html += "<div></div>";
+  for (var d = 1; d <= 31; d++) {
+    var dow = (first + d - 1) % 7, on = d === 24 || d === 25;
+    html += '<div class="d' + (dow === 0 ? " sun" : "") + (on ? " on" : "") + '">' + (on ? "<span>" + d + "</span>" : d) + "</div>";
+  }
+  g.innerHTML = html;
+
+  /* D-day: 개막식 2026-10-24 14:00 (한국 시간) */
+  var open = new Date("2026-10-24T14:00:00+09:00").getTime();
+  var start = new Date("2026-10-24T09:00:00+09:00").getTime();
+  var end = new Date("2026-10-25T20:00:00+09:00").getTime();
+  function pad(n) { return String(n); }
+  function tick() {
+    var now = Date.now(), diff = open - now;
+    var box = $("count"), msg = $("countMsg"), tt = $("countTitle");
+    if (diff > 0) {
+      var s = Math.floor(diff / 1000);
+      $("cd").textContent = pad(Math.floor(s / 86400));
+      $("ch").textContent = pad(Math.floor(s % 86400 / 3600));
+      $("cm").textContent = pad(Math.floor(s % 3600 / 60));
+      $("cs").textContent = pad(s % 60);
+      msg.hidden = true; box.hidden = false; tt.hidden = false;
+    } else {
+      box.hidden = true; tt.hidden = true; msg.hidden = false;
+      msg.textContent = now <= end ? (now >= start ? "지금 일산문화광장에서 행사가 진행 중입니다" : "곧 개막합니다") : "2026 상생한마당에 함께해 주셔서 감사합니다";
+    }
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* 참석 신청 */
+  var act = $("rsvpAction");
+  if (rsvp) {
+    act.innerHTML = '<a class="btn" target="_blank" rel="noopener"></a>';
+    act.firstChild.href = rsvp; act.firstChild.textContent = "참석 신청하기";
+  } else {
+    act.innerHTML = '<p style="margin-top:14px;font-weight:700">참석 신청은 아래 번호로 문의해 주세요.</p>';
+  }
+
+  /* 공유 창 */
+  var sheet = $("sheet"), lastFocus = null;
+  function drawQR() {
+    try {
+      var q = qrcode(0, "M"); q.addData(url); q.make();
+      $("qr").innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+    } catch (e) { $("qr").textContent = "QR을 만들 수 없습니다"; }
+  }
+  function openSheet() { lastFocus = document.activeElement; $("urlText").textContent = url; drawQR(); sheet.hidden = false; $("sheetX").focus(); }
+  function closeSheet() { sheet.hidden = true; if (lastFocus) lastFocus.focus(); }
+  $("menuBtn").addEventListener("click", openSheet);
+  $("shareOpen").addEventListener("click", openSheet);
+  $("sheetX").addEventListener("click", closeSheet);
+  sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !sheet.hidden) closeSheet(); });
+
+  function copy(toastId) {
+    var t = $(toastId);
+    function ok() { t.textContent = "링크를 복사했습니다"; setTimeout(function () { t.textContent = ""; }, 2200); }
+    function fallback() {
+      var r = document.createRange(), el = $("urlText");
+      $("urlText").textContent = url;
+      if (sheet.hidden) { openSheet(); }
+      r.selectNodeContents($("urlText")); var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+      $("toast").textContent = "주소를 길게 눌러 복사해 주세요";
+    }
+    try { navigator.clipboard.writeText(url).then(ok, fallback); } catch (e) { fallback(); }
+  }
+  $("copyBtn").addEventListener("click", function () { copy("toast2"); });
+  $("copyBtn2").addEventListener("click", function () { copy("toast"); });
+
+  /* 스크롤 등장: 화면 아래 섹션만 숨겼다가 나타냄 */
+  if ("IntersectionObserver" in window) {
+    var els = document.querySelectorAll(".rv");
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.remove("pre"); io.unobserve(e.target); } });
+    }, { rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (el) {
+      if (el.getBoundingClientRect().top > innerHeight) { el.classList.add("pre"); io.observe(el); }
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
