@@ -17,7 +17,6 @@
 <link rel="icon" href="logo.png">
 <style>:root{color-scheme:light dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@400;500;700&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
 <style>
 /* Layout: 모바일 세로 스크롤 초대장. 포스터 표지 → 일시·모시는 글 → 달력·D-day → 프로그램 → 오시는 길 → 참석 신청 → 공유. 좌상단 고정 ⋯ 버튼이 공유 창을 연다. */
 :root {
@@ -181,7 +180,7 @@ section { padding: 44px 20px; }
 .card h3 { font-size: 18px; margin-bottom: 14px; }
 .x { position: absolute; right: 12px; top: 12px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: 20px; cursor: pointer; line-height: 1; }
 .qr { width: 190px; height: 190px; margin: 0 auto; background: #fff; border-radius: 12px; padding: 8px; display: grid; place-items: center; }
-.qr svg { width: 100%; height: 100%; display: block; }
+.qr svg, .qr img { width: 100%; height: 100%; display: block; }
 .url { margin: 14px 0 0; font-size: 13px; color: var(--muted); word-break: break-all; user-select: all; }
 .card .btn { margin-top: 14px; width: 100%; }
 .toast { min-height: 20px; margin-top: 8px; font-size: 13px; color: var(--green); font-weight: 700; }
@@ -367,10 +366,11 @@ section { padding: 44px 20px; }
   /* 공유 창 */
   var sheet = $("sheet"), lastFocus = null;
   function drawQR() {
-    try {
-      var q = qrcode(0, "M"); q.addData(url); q.make();
-      $("qr").innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
-    } catch (e) { $("qr").textContent = "QR을 만들 수 없습니다"; }
+    /* 인쇄물과 동일한 QR 파일 사용 */
+    var img = document.createElement("img");
+    img.src = "qr/qr_sangsaeng2026.svg"; img.alt = "초대장 링크 QR 코드";
+    img.onerror = function () { $("qr").textContent = "QR을 불러올 수 없습니다"; };
+    $("qr").innerHTML = ""; $("qr").appendChild(img);
   }
   function openSheet() { lastFocus = document.activeElement; $("urlText").textContent = url; drawQR(); sheet.hidden = false; $("sheetX").focus(); }
   function closeSheet() { sheet.hidden = true; if (lastFocus) lastFocus.focus(); }
